@@ -28,9 +28,12 @@ let EmailTo = "like@vince.studio";
 //邮件主题
 let EmailSubject = "一封暖暖的小邮件";
 
-//每日发送时间
-let EmailHour = 6;
-let EmialMinminute= 30;
+//每天上午发送时间
+let AMEmailHour = 6;
+let AMEmialMinminute= 30;
+//每天下午发送时间
+let PMEmailHour = 23;
+let PMEmialMinminute= 30;
 
 
 let HtmlData = {};
@@ -179,8 +182,16 @@ function sendMail() {
 
 var rule = new schedule.RecurrenceRule();
 rule.dayOfWeek = [0, new schedule.Range(1, 6)];
-rule.hour = EmailHour;
-rule.minute = EmialMinminute;
+rule.hour = AMEmailHour;
+rule.minute = AMEmialMinminute;
+var j = schedule.scheduleJob(rule, function() {
+  console.log("执行任务");
+  getData();
+});
+var rule = new schedule.RecurrenceRule();
+rule.dayOfWeek = [0, new schedule.Range(1, 6)];
+rule.hour = PMEmailHour;
+rule.minute = PMEmialMinminute;
 var j = schedule.scheduleJob(rule, function() {
   console.log("执行任务");
   getData();
