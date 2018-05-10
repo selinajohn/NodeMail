@@ -8,10 +8,10 @@ const schedule = require("node-schedule");
 //配置项
 
 //纪念日
-let startDay = "2016/6/24";
+let startDay = "2017/12/3";
 
 //当地拼音,需要在下面的墨迹天气url确认
-const local = "xiangtan";
+const local = "hangzhou";
 
 //发送者邮箱厂家
 let EmianService = "163";
@@ -26,7 +26,7 @@ let EmailFrom = '"name" <xxxxxx@163.com>';
 //接收者邮箱地
 let EmailTo = "like@vince.studio";
 //邮件主题
-let EmailSubject = "一封暖暖的小邮件";
+let EmailSubject = "嘻嘻嘻";
 
 //每天上午发送时间
 let AMEmailHour = 6;
@@ -38,7 +38,7 @@ let PMEmialMinminute= 30;
 
 let HtmlData = {};
 const OneUrl = "http://wufazhuce.com/";
-const WeatherUrl = "https://tianqi.moji.com/weather/china/hunan/" + local;
+const WeatherUrl = "https://tianqi.moji.com/weather/china/zhejiang/" + local;
 
 function getData() {
   //计算在一起多久
